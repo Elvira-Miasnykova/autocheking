@@ -480,5 +480,198 @@ function getSubstring(string, length) {
 
 // ---------- task 33 ---------------------
 
+// function formatMessage(message, maxLength) {
+//   let result;
+//   // Change code below this line
+// if (message.length > maxLength) {
+// result = message.slice( 0, maxLength) + "...";}
+// //result = result + "…";}
+
+// else {
+//   result = message;
+// }
+
+//   /// Change code above this line
+//   return result;
+// };
+
+// ---------- task 34 ---------------------
+
+// function normalizeInput(input) {
+//   const normalizedInput = input.toLowerCase(); // Change this line
+
+//   return normalizedInput;
+// };
+
+// // ---------- task 35 ---------------------
+
+// function checkForName(fullName, name) {
+//  const result = fullName.includes(name); // Change this line
+//   return result;
+// };
+
+// ---------- task 36 ---------------------
+
+// function checkForSpam(message) {
+//   let result;
+//   // Change code below this line
+// result = message.toLowerCase();
+//   result = result.includes("spam")|| result.includes("sale");
+//   // Change code above this line
+//   return result;
+// };
+
+
+// _____________Module2_________________________
+
+// ---------- task 1 ---------------------
+
+// function checkAge(age) {
+//   if (age >= 18) { // Change this line
+//     return "You are an adult";
+//   }
+
+//   return "You are a minor";
+// };
+
+// ---------- task 2 ---------------------
+
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   // Change code below this line
+
+
+
+//   if (password === ADMIN_PASSWORD) {
+//     return "Welcome!";
+//   }
+//   return "Access denied, wrong password!";
+  
+
+  
+//   // Change code above this line
+// }
+
+
+// ---------- task 3 ---------------------
+
+// function checkStorage(available, ordered) {
+//   // Change code below this line
+  
+
+//   if (ordered === 0) {
+//     return "Your order is empty!";
+//   }
+//   if (ordered > available) {
+//     return "Your order is too large, not enough goods in stock!";
+//   }
+//   return "The order is accepted, our manager will contact you";
+  
+
+
+//   // Change code above this line
+// }
+
+
+
+// ---------- task 4 ---------------------
+
+// Change code below this line
+// const fruits = ["apple", "plum", "pear", "orange"];
+
+// ---------- task 5 ---------------------
+
+// const fruits = ["apple", "plum", "pear", "orange"];
+// const firstElement = fruits[0];
+// const secondElement = fruits[1];
+// const lastElement = fruits[3];
+// Change code below this line
+
+// ---------- task 6 ---------------------
+
+// const fruits = ["apple", "plum", "pear", "orange"];
+
+// // Write your code under this line
+// fruits[1] = "peach";
+// fruits[3] = "banana"
+
+
+// ---------- task 7 ---------------------
+
+// const fruits = ["apple", "peach", "pear", "banana"];
+
+// // Change code below this line
+// const fruitsArrayLength = fruits.length;
+
+// ---------- task 8 ---------------------
+
+// const fruits = ["apple", "peach", "pear", "banana"];
+// const lastElementIndex = fruits.length -1;
+// const lastElement = fruits[lastElementIndex];
+// Change code below this line
+
+// ---------- task 9 ---------------------
+
+// function getExtremeElements(array) {
+  // Change code below this line
+
+  //    1     
+//   let newArray = []
+// const firstEl = array[0];
+//   console.log(firstEl)
+//   newArray.push(firstEl)
+// const lastElIdx = array.length -1;
+// const lastEl = array[lastElIdx];
+//   console.log(lastEl)
+// newArray.push(lastEl);
+//   return newArray;
+  
+  //    2     
+  // let newArray = [];
+  // return newArray = [array[0], array[array.length - 1]];
+  // Change code above this line
+// }
+// console.log(getExtremeElements([1,4,56,6,7]));
+
+// ---------- task 10 ---------------------
+
+// function splitMessage(message, delimiter) {
+//   let words;
+//   // Change code below this line
+// words = message.split(delimiter);
+//   // Change code above this line
+//   return words;
+// };
+
+// console.log(splitMessage("Hello world!", ""));
+// console.log(splitMessage("Hello world!", " "));
+// console.log(splitMessage("Hello world!", ","));
+
+// function calculateEngravingPrice(message, pricePerWord) {
+//    // Change code below this line
+// const words = message.split(" ");
+  // console.log(words);
+  // const value = words.length;
+  // const totalPrice = value * pricePerWord;
+  // return totalPrice;
+
+   // Change code above this line
+  // ------------2--------------
+//   let value =0;
+//   for (let i = 1; i <= words.length - 1; i += 1) {
+//      value = i + 1;
+    
+//   }
+//   console.log(value)
+//   const totalPrice = value * pricePerWord;
+//   return totalPrice;
+
+  
+// };
+// console.log(calculateEngravingPrice('JavaScript is in my blood', 10));
+
+
+
+
 
 
