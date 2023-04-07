@@ -460,23 +460,23 @@
 
 // ---------- task 31 ---------------------
 
-const courseTopic = "JavaScript essentials";
-// Change code below this line
+// const courseTopic = "JavaScript essentials";
+// // Change code below this line
 
-const courseTopicLength = courseTopic.length;
-const firstElement = courseTopic[0];
-const lastElement = courseTopic[courseTopic.length - 1];
+// const courseTopicLength = courseTopic.length;
+// const firstElement = courseTopic[0];
+// const lastElement = courseTopic[courseTopic.length - 1];
 
-// Change code above this line
+// // Change code above this line
 
 
 // ---------- task 32 ---------------------
 
-function getSubstring(string, length) {
-  const substring = string.slice(0, length); // Change this line
+// function getSubstring(string, length) {
+//   const substring = string.slice(0, length); // Change this line
 
-  return substring;
-};
+//   return substring;
+// };
 
 // ---------- task 33 ---------------------
 
