@@ -280,4 +280,95 @@
 
 
 
+//////////////Task4///////////////////////////////////////////////
+
+
+//1.Розділіть студентів на пари(хлопець + дівчина) для работи над
+//проєктом. У вас повинен вийти вкладений масив з парами студентів:
+//[["Олександр", "Олена"], [..], [...]];
+
+const students = ["Олександр", "Ігор", "Олена", "Іра", "Олексій",
+"Світлана"];
+const themes = ["Диференційне рівняння", "Теорія автоматів",
+  "Алгоритми і структури даних"];
+const marks = [4, 5, 5, 3, 4, 5];
+
+const getPairs = (studs) => {
+  const femaleStudents = [];
+  const maleStudents = [];
+  const pairArr = [];
+
+  for (let i = 0; i < studs.length; i += 1) {
+    if (studs[i].endsWith("а")) {
+      femaleStudents.push(studs[i]);
+      //return femaleStudents;
+    } else {
+      maleStudents.push(studs[i]);
+      //return maleStudents;
+    }
+    
+  };
+
+  for (let i = 0; i < maleStudents.length; i += 1) {
+    pairArr.push([maleStudents[i], femaleStudents[i]]);
+    
+  };
+  return pairArr;
+
+}
+
+const pairs = getPairs(students);
+//console.log(pairs);
+
+//2. Зіставте пари з попереднього завдання та теми проєктів, над
+//якими студенти будуть працювати.
+//Повинен вийти вкладений масив виду: [["Олександр і Олена", "Теорія
+//автоматів"], [...], [...]]
+
+
+const createPairsWithTopic = (pairs, topic) => {
+  const pairsWithTopicArr = [];
+
+  for (let i = 0; i < pairs.length; i += 1) {
+    pairsWithTopicArr.push([pairs[i].join(" і "), topic[i]]);
+  };
+  
+  return pairsWithTopicArr;
+};
+
+const pairWithTopic = createPairsWithTopic(pairs, themes);
+//console.log(pairWithTopic);
+
+//3. Зіставте оцінки(marks) зі студентом(students): [["Саша", 4], [...],
+//[...]]
+
+const assignMark = (studs, mark) => {
+  const studentMarksArr = [];
+
+  for (let i = 0; i < studs.length; i += 1) {
+    studentMarksArr.push([studs[i], mark[i]]);
+  };
+
+  return studentMarksArr;
+};
+
+const assingedMark = assignMark(students, marks);
+console.log(assingedMark);
+
+//4. Поставте кожній парі випадкову оцінку(від 1 до 5) за проєкт (тут
+//функція буде не чистою, але не повинна мутувати массив):
+//[["Олександр і Олена", "Теорія автоматів", 5], [...], [...]]
+
+const assignRandomMarkToPair = (pairs) => {
+  const pairMarkArr = [];
+
+  for (let i = 0; i < pairs.length; i += 1) {
+    pairMarkArr.push([...pairs[i], (Math.floor(Math.random() * 5) + 1) ]);
+  };
+  console.log('pairs', pairs);
+  return pairMarkArr;
+};
+
+const assignedRandomMarkToPair = assignRandomMarkToPair(pairs);
+console.log(assignedRandomMarkToPair);
 
