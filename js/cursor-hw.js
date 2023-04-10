@@ -221,7 +221,62 @@
 // Приклад: getRandomPassword(4) -> 1875, getRandomPassword() ->
 // 87240124
 
+// function getRandomPassword(length = 7) {
+//   let password = '';
+//   let characters = '0123456789';
+//   let passwordLength = characters.length;
 
+//   for (let i = 0; i < length; i += 1) {
+//     password += characters.charAt(Math.floor(Math.random() * passwordLength));
+
+//   }
+//   return password;
+// };
+
+// console.log(getRandomPassword(3));
+// console.log(getRandomPassword());
+// console.log(getRandomPassword(10));
+
+// 10. Створіть функцію, яка видаляє всі букви з речення.
+// Приклад: deleteLetters('a', "blablabla") -> "blblbl"
+
+// function deteleLetters(letter, string) {
+//   return string.split(letter).join("");
+// };
+
+// console.log(deteleLetters("a", "blablabla"));
+
+// 11. Створіть функцію, яка перевіряє, чи є слово паліндромом.
+// Приклад: isPalyndrom("мадам") -> true, isPalyndrom("кокос") -> false,
+// isPalyndrom("Я несу гусеня") -> true
+
+// function isPalyndrom(string) {
+//   const cleanString = string.toLowerCase().replaceAll(" ", "");
+//   const reversed = cleanString.split("").reverse().join("");
+//   return reversed;
+// };
+
+//console.log(isPalyndrom("Я несу гусеня"));
+// 12. Створіть функцію, яка видалить з речення букви, які
+// зустрічаються більше 1 разу.
+// Приклад: deleteDuplicateLetter("Бісквіт був дуже ніжним") ->
+// "сктдеим"
+
+// function deleteDuplicateLetter(string) {
+//   let strOfDuplicate = '';
+//   const letters = string.trim().toLowerCase();
+//   for (let i = 0; i < letters.length; i += 1) {
+//     let letterCheck = letters[i];
+//     if (letters.indexOf(letterCheck) === letters.lastIndexOf(letterCheck)) {
+//       //console.log('indexof', letters.indexOf(letterCheck));
+//       //console.log('lastindexof', letters.lastIndexOf(letterCheck));
+//       strOfDuplicate += letterCheck;
+//     }
+//   }
+//   return strOfDuplicate;
+// };
+
+// console.log(deleteDuplicateLetter("Бісквіт був дуже ніжним"));
 
 
 
