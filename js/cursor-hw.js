@@ -287,88 +287,162 @@
 //проєктом. У вас повинен вийти вкладений масив з парами студентів:
 //[["Олександр", "Олена"], [..], [...]];
 
-const students = ["Олександр", "Ігор", "Олена", "Іра", "Олексій",
-"Світлана"];
-const themes = ["Диференційне рівняння", "Теорія автоматів",
-  "Алгоритми і структури даних"];
-const marks = [4, 5, 5, 3, 4, 5];
+// const students = ["Олександр", "Ігор", "Олена", "Іра", "Олексій",
+// "Світлана"];
+// const themes = ["Диференційне рівняння", "Теорія автоматів",
+//   "Алгоритми і структури даних"];
+// const marks = [4, 5, 5, 3, 4, 5];
 
-const getPairs = (studs) => {
-  const femaleStudents = [];
-  const maleStudents = [];
-  const pairArr = [];
+// const getPairs = (studs) => {
+//   const femaleStudents = [];
+//   const maleStudents = [];
+//   const pairArr = [];
 
-  for (let i = 0; i < studs.length; i += 1) {
-    if (studs[i].endsWith("а")) {
-      femaleStudents.push(studs[i]);
-      //return femaleStudents;
-    } else {
-      maleStudents.push(studs[i]);
-      //return maleStudents;
-    }
+//   for (let i = 0; i < studs.length; i += 1) {
+//     if (studs[i].endsWith("а")) {
+//       femaleStudents.push(studs[i]);
+//       //return femaleStudents;
+//     } else {
+//       maleStudents.push(studs[i]);
+//       //return maleStudents;
+//     }
     
-  };
+//   };
 
-  for (let i = 0; i < maleStudents.length; i += 1) {
-    pairArr.push([maleStudents[i], femaleStudents[i]]);
+//   for (let i = 0; i < maleStudents.length; i += 1) {
+//     pairArr.push([maleStudents[i], femaleStudents[i]]);
     
-  };
-  return pairArr;
+//   };
+//   return pairArr;
 
-}
+// }
 
-const pairs = getPairs(students);
-//console.log(pairs);
+// const pairs = getPairs(students);
+// //console.log(pairs);
 
-//2. Зіставте пари з попереднього завдання та теми проєктів, над
-//якими студенти будуть працювати.
-//Повинен вийти вкладений масив виду: [["Олександр і Олена", "Теорія
-//автоматів"], [...], [...]]
+// //2. Зіставте пари з попереднього завдання та теми проєктів, над
+// //якими студенти будуть працювати.
+// //Повинен вийти вкладений масив виду: [["Олександр і Олена", "Теорія
+// //автоматів"], [...], [...]]
 
 
-const createPairsWithTopic = (pairs, topic) => {
-  const pairsWithTopicArr = [];
+// const createPairsWithTopic = (pairs, topic) => {
+//   const pairsWithTopicArr = [];
 
-  for (let i = 0; i < pairs.length; i += 1) {
-    pairsWithTopicArr.push([pairs[i].join(" і "), topic[i]]);
-  };
+//   for (let i = 0; i < pairs.length; i += 1) {
+//     pairsWithTopicArr.push([pairs[i].join(" і "), topic[i]]);
+//   };
   
-  return pairsWithTopicArr;
-};
+//   return pairsWithTopicArr;
+// };
 
-const pairWithTopic = createPairsWithTopic(pairs, themes);
-//console.log(pairWithTopic);
+// const pairWithTopic = createPairsWithTopic(pairs, themes);
+// //console.log(pairWithTopic);
 
-//3. Зіставте оцінки(marks) зі студентом(students): [["Саша", 4], [...],
-//[...]]
+// //3. Зіставте оцінки(marks) зі студентом(students): [["Саша", 4], [...],
+// //[...]]
 
-const assignMark = (studs, mark) => {
-  const studentMarksArr = [];
+// const assignMark = (studs, mark) => {
+//   const studentMarksArr = [];
 
-  for (let i = 0; i < studs.length; i += 1) {
-    studentMarksArr.push([studs[i], mark[i]]);
-  };
+//   for (let i = 0; i < studs.length; i += 1) {
+//     studentMarksArr.push([studs[i], mark[i]]);
+//   };
 
-  return studentMarksArr;
-};
+//   return studentMarksArr;
+// };
 
-const assingedMark = assignMark(students, marks);
-console.log(assingedMark);
+// const assingedMark = assignMark(students, marks);
+// console.log(assingedMark);
 
-//4. Поставте кожній парі випадкову оцінку(від 1 до 5) за проєкт (тут
-//функція буде не чистою, але не повинна мутувати массив):
-//[["Олександр і Олена", "Теорія автоматів", 5], [...], [...]]
+// //4. Поставте кожній парі випадкову оцінку(від 1 до 5) за проєкт (тут
+// //функція буде не чистою, але не повинна мутувати массив):
+// //[["Олександр і Олена", "Теорія автоматів", 5], [...], [...]]
 
-const assignRandomMarkToPair = (pairs) => {
-  const pairMarkArr = [];
+// const assignRandomMarkToPair = (pairs) => {
+//   const pairMarkArr = [];
 
-  for (let i = 0; i < pairs.length; i += 1) {
-    pairMarkArr.push([...pairs[i], (Math.floor(Math.random() * 5) + 1) ]);
-  };
-  console.log('pairs', pairs);
-  return pairMarkArr;
-};
+//   for (let i = 0; i < pairs.length; i += 1) {
+//     pairMarkArr.push([...pairs[i], (Math.floor(Math.random() * 5) + 1) ]);
+//   };
+//   console.log('pairs', pairs);
+//   return pairMarkArr;
+// };
 
-const assignedRandomMarkToPair = assignRandomMarkToPair(pairs);
-console.log(assignedRandomMarkToPair);
+// const assignedRandomMarkToPair = assignRandomMarkToPair(pairs);
+// console.log(assignedRandomMarkToPair);
+
+//////////////Task5///////////////////////////////////////////////
+
+//1.Створіть функцію getRandomArray(length, min, max) – яка повертає масив
+//випадкових цілих чисел. У функції є параметри: length - довжина масиву, min –
+//мінімальне значення цілого числа, max – максимальне значення цілого числа.
+//Приклад: getRandomArray(15, 1, 100) –> [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2]
+
+// const getRandomArray = (length, min, max) => {
+//   console.log(length, min, max);
+//   const newArray = [];
+//   for (let i = 0; i < length; i += 1) {
+//     newArray.push(parseInt(Math.random() * ((max - min) + min)));
+//   }
+//   return newArray;
+// };
+
+// console.log(getRandomArray(15, 1, 100));
+
+//2. Створіть функцію getModa(...numbers) – яка вираховує моду всіх переданих
+//в неї аргументів. НЕ ЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
+//Приклад: getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 2
+
+//3. Створіть функцію getAverage(...numbers) – яка рахує середнє арифметичне
+//всіх переданих в неї аргументів. НЕ ЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ Приклад:
+//getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 34.4
+
+
+// const getAverage = (...numbers) => {
+//   const integerNumbers = numbers.filter(number => Number.isInteger(number));
+//   const res = integerNumbers.reduce((prevValue, number) => {
+//     const sum = prevValue + number;
+//     return sum;
+//   }, 0);
+  
+//   return res / integerNumbers.length;
+// };
+
+
+// console.log(getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2, 23.2322));
+
+//4. Створіть функцію getMedian(...numbers) – яка рахує медіану всіх переданих
+//в неї аргументів. НЕ ЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
+//Приклад: getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 23
+//Приклад: getMedian(1, 2, 3, 4) –> 2.5 Приклад: getMedian(1, 2, 3, 4, 5) –>3
+
+// const getMedian = (...numbers) => {
+//   //console.log(numbers);
+//   const sortArr = numbers.filter((number) => Number.isInteger(number)).sort((a, b) => a - b);
+//   //console.log(sortArr);
+//   const halfOfArray = sortArr.length / 2;
+//   return (sortArr.length % 2 === 0)
+//     ? (sortArr[halfOfArray] + sortArr[halfOfArray -1]) / 2
+//     : sortArr[Math.floor(halfOfArray)]
+// };
+
+// console.log("Median =", getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+// console.log("Median =", getMedian(1, 2, 3, 4));
+// console.log("Median =", getMedian(1, 2, 3, 4, 5, 6.2322));
+
+//5. Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа
+//передані як аргументи функції.
+//Приклад: filterEvenNumbers(1, 2, 3, 4, 5, 6) -> [1, 3, 5]
+
+// const filterEvenNumbers = (...numbers) => {
+//   const filteredNumbers = numbers.filter((number) => number % 2 !== 0);
+//   return filteredNumbers;
+// };
+
+// console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6));
+
+// 6. Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість
+// чисел більших
+// Приклад: countPositiveNumbers(1, -2, 3, -4, -5, 6) -> 3
 
