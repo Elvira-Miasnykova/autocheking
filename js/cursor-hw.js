@@ -446,3 +446,266 @@
 // чисел більших
 // Приклад: countPositiveNumbers(1, -2, 3, -4, -5, 6) -> 3
 
+// const countPositiveNumbers = (...numbers) => {
+//   const res = numbers.filter((number) => number > 0).reduce((prev) => {
+//     return prev + 1;   // (number)=> (number > 0).length
+//   }, 0);
+//   return res;
+// };
+
+// console.log(countPositiveNumbers(1, -2, 3, -4, -5, 6));
+// console.log(countPositiveNumbers(1, -2, 3, -4, -5, 6, 1, -5, 10));
+
+
+//7. Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі
+//елементи в масиві та залишить тільки ті, які діляться на ціло на 5
+//Приклад: getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) -> [55, 55]
+
+// const getDividedByFive = (...numbers) => {
+//   const res = numbers.filter((number) => number % 5 === 0);
+//   return res;
+// };
+
+// console.log(getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+
+// 8. Створіть функцію replaceBadWords(string) – яка 1) розіб'є фразу на слова, 2)
+// замінить погані слова на зірочки (*). При вирішенні цього завдання необхідно
+// розбити масив на слова за допомогою функції .split(" "), після чого масив
+// необхідно буде склеїти .join(" ") Погані слова: shit та fuck. Передбачте
+// можливість розширювати cписок цих слів у майбутньому.
+// Приклад: replaceBadWords("Are you fucking kidding?") -> "Are you ****ing
+// kidding?"
+// Приклад: replaceBadWords("Holy shit!") -> "Holy ***!"
+// Приклад: replaceBadWords("It's bullshit!") -> "It's bull****!"
+
+// const replaceBadWords = (string) => {
+//   const splitedArray = string.split(" ");
+//   //return splitedArray
+//   const badWords = ["shit", "fuck"];
+//   const newStr = splitedArray.map((item) => {
+//     for (let i = 0; i < badWords.length; i += 1) {
+//       if (item.toLowerCase().includes(badWords[i])) {
+//         item = item.replaceAll(badWords[i], "*".repeat(badWords[i].length))
+//       }
+//     }
+//     return item;
+//   }
+//   );
+
+//   return newStr.join(" ");
+// };
+
+// console.log(replaceBadWords("Holy shit!"));
+// console.log(replaceBadWords("It's bullshit!"));
+// console.log(replaceBadWords("Are you fucking kidding?"));
+
+// 9. Створіть функцію divideByThree(word), яка розбиває кожне слово на умовні
+// склади по 3 букви. Якщо букв менше трьох – не розбиває. Пробіли завжди
+// видаляються. Рядок приводится до нижнього регістру.
+// Приклад: divideByThree("Commander) -> ["com", "man", "der"]
+// Приклад: divideByThree("live") -> ["liv", "e"]
+
+// const divideByThree = (word) => {
+//   const result = [];
+//   const letters = word.toLowerCase().replace(/\s/g, "").split("");
+
+//   for (let i = 0; i < letters.length; i += 3) {
+//     const syllable = letters.slice(i, i + 3).join("");
+//     if (syllable.length === 3) {
+//       result.push(syllable);
+//     } else {
+//       result.push(letters.slice(i).join(""));
+//      // break;
+//     }
+//   }
+//   return result;
+// };
+
+// console.log(divideByThree("Commander"));
+// console.log(divideByThree("live"));
+
+
+// 10. Створіть функцію generateCombinations(word), яка видасть всі можливі
+// перестановки(унікальні, без повторень) букв в слові. Для тестів не передавайте
+// слова в яких більше 10 букв. Краще взагалі обмежити работу функції 10 буквами.
+// Приклад: generateCombinations("man") -> ["man", "mna", "amn", "anm", "nam",
+// "nma"]
+// Приклад: generateCombinations("ol") -> ["ol", "lo"]
+
+// const generateCombinations = (word) => {
+//   if (word.length < 2) {
+//     return word;
+//   } else if (word.length > 10) {
+//     console.log("Too much letters");
+//   } else {
+//     let res = [];
+//     //for (let i = 0; i < word.length; i += 1) {
+//       let letter = word[0];
+//       console.log('letter',letter);
+//       let subWord = word.substr(0, 0) + word.substr(0 + 1, word.length - 1);
+//       console.log('sunword',subWord);
+//       let subWordArr = generateCombinations(subWord);
+//     console.log("subWordarr:", subWordArr);
+//     console.log('subWordarr[0]', subWordArr[0]);
+//       //for (let j = 0; j < subWordArr.length; j += 1) {
+//         res.push(letter + subWordArr[0]);
+//       //}
+//     //}
+//     return res;
+//   }
+// };
+
+// console.log(generateCombinations("man"));
+
+
+
+////////////////////task6///////////////////////////////////////////////
+
+const students = [{
+name: "Tanya",
+course: 3,
+subjects: {
+math: [4, 4, 3, 4],
+algorithms: [3, 3, 3, 4, 4, 4],
+data_science: [5, 5, 3, 4]
+}
+}, {
+name: "Victor",
+course: 4,
+subjects: {
+physics: [5, 5, 5, 3],
+economics: [2, 3, 3, 3, 3, 5],
+geometry: [5, 5, 2, 3, 5]
+}
+}, {
+name: "Anton",
+course: 2,
+subjects: {
+statistics: [4, 5, 5, 5, 5, 3, 4, 3, 4, 5],
+english: [5, 3],
+cosmology: [5, 5, 5, 5]
+}
+}];
+
+// 1.
+// Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data
+// science"] - яка повертає список предметів
+// для конкретного студента.
+// Зверніть увагу – назву предмету необхідно повертати з великої літери, а _ –
+// замінити на пробіл
+
+// const getSubjects = (student) => {
+//   const newArrOfSubjects = [];
+  
+//   const arrOfSubjects = Object.keys(student.subjects);
+//   for (let subject of arrOfSubjects) {
+//     newArrOfSubjects.push(subject[0].toUpperCase() + subject.slice(1).replaceAll("_", " "));
+//   }
+//     return newArrOfSubjects;
+  
+  
+// };
+
+// console.log(getSubjects(students[0]));
+// console.log(getSubjects(students[2]));
+
+
+// 2. Створіть функцію getAverageMark(students[0]) --> 3.79 – яка поверне
+// середню оцінку по усім предметам для переданого студента НЕ МАСИВА
+// СТУДЕНТІВ.
+// Оцінку округліть до 2ого знаку. Можна використовувати функції, написані у
+// попередніх домашніх завданнях :)
+
+const getAverageMark = (student) => {
+  const marks = [];
+  
+  for (let subject in student.subjects) {
+      //console.log(student.subjects[subject]);
+      marks.push(...student.subjects[subject]);
+      //console.log(marks);
+    }
+  const average = getAverage(marks)
+  return Number(average.toFixed(2));
+};
+
+
+
+const getAverage = (numbers) => {
+  const res = numbers.reduce((prevValue, number) => {
+    const sum = prevValue + number;
+    return sum;
+  }, 0);
+  
+  return res / numbers.length;
+};
+
+console.log(getAverageMark(students[0]));
+
+
+// 3. Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name":
+// "Tanya", "averageMark": 3.79} – яка повертає інформацію загального виду по
+// переданому студенту (вам знадобиться функція з попереднього завдання).
+// Повинна бути виведена інформація: курс, ім'я, середня оцінка.
+
+// const getStudentInfo = (student) => {
+//   const studentInfo = {
+//     course: student.course,
+//     name: student.name,
+//     averageMark: getAverageMark(student),
+//   };
+//   return studentInfo;
+// };
+
+// console.log(getStudentInfo(students[0]));
+
+
+// 4.Ствроіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"]
+// – яка повертає імена студентів у алфавітному порядку.
+
+// const getStudentsNames = (students) => {
+//   const array = students.map((student) => student.name).sort((a, b) => a.localeCompare(b));
+//   return array;
+//   };
+
+// console.log(getStudentsNames(students));
+
+
+
+// 5. Створіть функцію getBestStudent(students) --> "Anton" – яка повертає
+// кращого студента зі списку по показнику середньої оцінки.
+
+const getBestStudent = (students) => {
+  const bestAverageMarkArray = students.map(student => getAverageMark(student));
+  const bestMark = Math.max(...bestAverageMarkArray);
+  const bestMarkIndex = bestAverageMarkArray.indexOf(bestMark);
+  const x = students[bestMarkIndex].name;
+  return x;
+};
+
+console.log(getBestStudent(students));
+
+
+// 6. Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка
+// повертає обє'кт, в якому ключі це букви у слові, а значення – кількість їх
+// повторень.
+
+const calculateWordLetters = (word) => {
+  const obj = {};
+  for (let letter of word) {
+    obj[letter] = (obj[letter] || 0) + 1;
+    console.log(obj);
+    console.log(obj[letter]);
+  }
+};
+
+console.log(calculateWordLetters('test'));
+
+function calculateWordLetters(item) {
+  const text = item.toLowerCase().split("");
+  let result = {};
+  text.forEach(function (item) {
+    result[item] = result[item] ? result[item] + 1 : 1;
+  });
+  return result;
+}
+console.log(calculateWordLetters("test"));
