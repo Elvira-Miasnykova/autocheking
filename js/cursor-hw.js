@@ -561,31 +561,31 @@
 
 ////////////////////task6///////////////////////////////////////////////
 
-const students = [{
-name: "Tanya",
-course: 3,
-subjects: {
-math: [4, 4, 3, 4],
-algorithms: [3, 3, 3, 4, 4, 4],
-data_science: [5, 5, 3, 4]
-}
-}, {
-name: "Victor",
-course: 4,
-subjects: {
-physics: [5, 5, 5, 3],
-economics: [2, 3, 3, 3, 3, 5],
-geometry: [5, 5, 2, 3, 5]
-}
-}, {
-name: "Anton",
-course: 2,
-subjects: {
-statistics: [4, 5, 5, 5, 5, 3, 4, 3, 4, 5],
-english: [5, 3],
-cosmology: [5, 5, 5, 5]
-}
-}];
+// const students = [{
+// name: "Tanya",
+// course: 3,
+// subjects: {
+// math: [4, 4, 3, 4],
+// algorithms: [3, 3, 3, 4, 4, 4],
+// data_science: [5, 5, 3, 4]
+// }
+// }, {
+// name: "Victor",
+// course: 4,
+// subjects: {
+// physics: [5, 5, 5, 3],
+// economics: [2, 3, 3, 3, 3, 5],
+// geometry: [5, 5, 2, 3, 5]
+// }
+// }, {
+// name: "Anton",
+// course: 2,
+// subjects: {
+// statistics: [4, 5, 5, 5, 5, 3, 4, 3, 4, 5],
+// english: [5, 3],
+// cosmology: [5, 5, 5, 5]
+// }
+// }];
 
 // 1.
 // Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data
@@ -616,30 +616,30 @@ cosmology: [5, 5, 5, 5]
 // Оцінку округліть до 2ого знаку. Можна використовувати функції, написані у
 // попередніх домашніх завданнях :)
 
-const getAverageMark = (student) => {
-  const marks = [];
+// const getAverageMark = (student) => {
+//   const marks = [];
   
-  for (let subject in student.subjects) {
-      //console.log(student.subjects[subject]);
-      marks.push(...student.subjects[subject]);
-      //console.log(marks);
-    }
-  const average = getAverage(marks)
-  return Number(average.toFixed(2));
-};
+//   for (let subject in student.subjects) {
+//       //console.log(student.subjects[subject]);
+//       marks.push(...student.subjects[subject]);
+//       //console.log(marks);
+//     }
+//   const average = getAverage(marks)
+//   return Number(average.toFixed(2));
+// };
 
 
 
-const getAverage = (numbers) => {
-  const res = numbers.reduce((prevValue, number) => {
-    const sum = prevValue + number;
-    return sum;
-  }, 0);
+// const getAverage = (numbers) => {
+//   const res = numbers.reduce((prevValue, number) => {
+//     const sum = prevValue + number;
+//     return sum;
+//   }, 0);
   
-  return res / numbers.length;
-};
+//   return res / numbers.length;
+// };
 
-console.log(getAverageMark(students[0]));
+// console.log(getAverageMark(students[0]));
 
 
 // 3. Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name":
@@ -674,38 +674,110 @@ console.log(getAverageMark(students[0]));
 // 5. Створіть функцію getBestStudent(students) --> "Anton" – яка повертає
 // кращого студента зі списку по показнику середньої оцінки.
 
-const getBestStudent = (students) => {
-  const bestAverageMarkArray = students.map(student => getAverageMark(student));
-  const bestMark = Math.max(...bestAverageMarkArray);
-  const bestMarkIndex = bestAverageMarkArray.indexOf(bestMark);
-  const x = students[bestMarkIndex].name;
-  return x;
-};
+// const getBestStudent = (students) => {
+//   const bestAverageMarkArray = students.map(student => getAverageMark(student));
+//   const bestMark = Math.max(...bestAverageMarkArray);
+//   const bestMarkIndex = bestAverageMarkArray.indexOf(bestMark);
+//   const x = students[bestMarkIndex].name;
+//   return x;
+// };
 
-console.log(getBestStudent(students));
+// console.log(getBestStudent(students));
 
 
 // 6. Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка
 // повертає обє'кт, в якому ключі це букви у слові, а значення – кількість їх
 // повторень.
 
-const calculateWordLetters = (word) => {
-  const obj = {};
-  for (let letter of word) {
-    obj[letter] = (obj[letter] || 0) + 1;
-    console.log(obj);
-    console.log(obj[letter]);
-  }
-};
+// const calculateWordLetters = (word) => {
+//   const obj = {};
+//   for (let letter of word) {
+//     obj[letter] = (obj[letter] || 0) + 1;
+//     console.log(obj);
+//     console.log(obj[letter]);
+//   }
+// };
 
-console.log(calculateWordLetters('test'));
+// console.log(calculateWordLetters('test'));
 
-function calculateWordLetters(item) {
-  const text = item.toLowerCase().split("");
-  let result = {};
-  text.forEach(function (item) {
-    result[item] = result[item] ? result[item] + 1 : 1;
-  });
-  return result;
-}
-console.log(calculateWordLetters("test"));
+// function calculateWordLetters(item) {
+//   const text = item.toLowerCase().split("");
+//   let result = {};
+//   text.forEach(function (item) {
+//     result[item] = result[item] ? result[item] + 1 : 1;
+//   });
+//   return result;
+// }
+// console.log(calculateWordLetters("test"));
+
+
+////////////////////////////task7/////////////////////////////////////
+
+
+// 1.
+// Створіть функцію getMyTaxes.call(country, salary) -> number; – яка рахує
+// скільки податків ви заплатите як IT-спеціаліст в якійсь з країн. Функція повинна
+// викликатись через call та працювати з даними через this
+
+const ukraine = { tax: 0.195, middleSalary: 1789, vacancies: 11476 };
+const latvia = { tax: 0.25, middleSalary: 1586, vacancies: 3921 };
+const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
+
+// function getMyTaxes(salary) {
+//   const number = this.tax * salary;
+//   return number;
+// };
+
+// console.log(`Taxes in Ukraine: ${getMyTaxes.call(ukraine, 2500)}`);
+// console.log(`Taxes in Latvia: ${getMyTaxes.call(latvia, 3500)}`);
+
+// 2. Створіть функцію getMiddleTaxes.call(country) -> number; – яка рахує
+// скільки у середньому податків платятт IT-спеціалісти у кожній країні. (tax *
+// middleSalary). Функція повинна викликатись через call та працювати з даними
+// через this
+
+// function getMiddleTaxes() {
+//   return this.tax * this.middleSalary;
+// };
+
+// console.log(`AverageTaxes in Litva: ${ getMiddleTaxes.call(litva) }`);
+
+// 3. Створіть функцію getTotalTaxes.call(country) -> number; – яка рахує, скільки
+// всього податків платять IT-спеціалісти у кожній країні. (tax * middleSalary *
+// vacancies). Функція повинна викликатись через call та працювати з даними
+// через this
+
+// function getTotalTaxes() {
+//   return this.tax * this.middleSalary * this.vacancies;
+// };
+
+// console.log(getTotalTaxes.call(litva));
+// console.log(getTotalTaxes.call(ukraine));
+// console.log(getTotalTaxes.call(latvia));
+
+// 4. Створіть функцію getMySalary(country) – яка буде писати в консоль об'єкт
+// виду: { salary: number, taxes: number, profit: number } кожні 10 секунд.
+// Значення salary – генеруйте випадковим чином у діапазоні 1500-2000. taxes –
+// розраховується в залежності від вибраної країни та значення salary.
+// profit = salary - taxes;
+// для виводу в консоль кожні 10 секунд використайте setInterval*/
+
+
+// function getMySalary() {
+//   const salary = Math.floor(Math.random() * ((2000 - 1500) + 1) + 1500);
+//   const taxes = this.tax * salary;
+//   //console.log(country.ta);
+//   const profit = salary - taxes;
+  
+//   const res = {
+//     salary,
+//     taxes,
+//     profit,
+//   };
+
+//   console.log(res);
+
+// };
+
+// let timeId = setInterval(() => getMySalary.call(latvia), 2000);
+// //clearInterval(timeId)
