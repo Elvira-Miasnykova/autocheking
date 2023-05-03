@@ -719,9 +719,9 @@
 // скільки податків ви заплатите як IT-спеціаліст в якійсь з країн. Функція повинна
 // викликатись через call та працювати з даними через this
 
-const ukraine = { tax: 0.195, middleSalary: 1789, vacancies: 11476 };
-const latvia = { tax: 0.25, middleSalary: 1586, vacancies: 3921 };
-const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
+// const ukraine = { tax: 0.195, middleSalary: 1789, vacancies: 11476 };
+// const latvia = { tax: 0.25, middleSalary: 1586, vacancies: 3921 };
+// const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
 
 // function getMyTaxes(salary) {
 //   const number = this.tax * salary;
@@ -816,103 +816,103 @@ const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
 // 5. Якщо студента виключено, він не отримує стипендію (думаю це було і так
 // очевидно :) )
 
-class Student {
-  constructor({university, course, fullName, marks = []}) {
-    this.university = university;
-    this.course = course;
-    this.fullName = fullName;
-    this.studMarks = marks;
-    this.excluded = true;
-  }
+// class Student {
+//   constructor({university, course, fullName, marks = []}) {
+//     this.university = university;
+//     this.course = course;
+//     this.fullName = fullName;
+//     this.studMarks = marks;
+//     this.excluded = true;
+//   }
 
-  getInfo() {
-    //return this;
-    return (
-      "Студент " +
-      this.course +
-      "го курсу " +
-      this.university +
-      ", " +
-      this.fullName
-    );
+//   getInfo() {
+//     //return this;
+//     return (
+//       "Студент " +
+//       this.course +
+//       "го курсу " +
+//       this.university +
+//       ", " +
+//       this.fullName
+//     );
 
-  }
+//   }
   
-  getAverageMark() {
-    const res = this.studMarks.reduce((prevValue, number) => {
-      const sum = prevValue + number;
-      return sum;
-    }, 0);
-    return res / this.studMarks.length;
-  }
+//   getAverageMark() {
+//     const res = this.studMarks.reduce((prevValue, number) => {
+//       const sum = prevValue + number;
+//       return sum;
+//     }, 0);
+//     return res / this.studMarks.length;
+//   }
 
-  dismiss() {
-    if (this.excluded === true) {
-      let MarksOfNull = this.studMarks;
-      MarksOfNull = null;
-      return (`Студента виключено: ${MarksOfNull}`);
-    }
-  }
+//   dismiss() {
+//     if (this.excluded === true) {
+//       let MarksOfNull = this.studMarks;
+//       MarksOfNull = null;
+//       return (`Студента виключено: ${MarksOfNull}`);
+//     }
+//   }
 
-  recovery() {
-    this.excluded = false;
-    return (`Студента поновлено: ${this.studMarks}`);
-  }
+//   recovery() {
+//     this.excluded = false;
+//     return (`Студента поновлено: ${this.studMarks}`);
+//   }
 
-  get marks() {
-    if (this.excluded === false) {
-      return this.studMarks;
-    }
-    return null;
-  }
+//   get marks() {
+//     if (this.excluded === false) {
+//       return this.studMarks;
+//     }
+//     return null;
+//   }
 
-  set marks(newMark) {
-    if (this.excluded === false) {
-      return this.studMarks.push(newMark);
-    }
-  }
-}
+//   set marks(newMark) {
+//     if (this.excluded === false) {
+//       return this.studMarks.push(newMark);
+//     }
+//   }
+// }
 
-class BudgetStudent extends Student {
-  constructor({university, fullName, marks, excluded, scholarship = 0}) {
-    super({university, fullName, marks, excluded});
-    this.scholarship = scholarship;
-    this.scholarshipInterval = setInterval(() => this.getScholarship(), 3000);
-  }
+// class BudgetStudent extends Student {
+//   constructor({university, fullName, marks, excluded, scholarship = 0}) {
+//     super({university, fullName, marks, excluded});
+//     this.scholarship = scholarship;
+//     this.scholarshipInterval = setInterval(() => this.getScholarship(), 3000);
+//   }
 
-  getScholarship() {
-  if (this.getAverageMark(this.marks) >= 4) {
-      console.log("Ви отримали 1400 грн. стипендії");
-      return this.scholarship += 1400;
-    } else 
-    if ((this.getAverageMark(this.marks) < 4) || (this.dismiss(this.excluded))) {
-      console.log("студента відчислено");
-      return this.scholarship;
-    }  
+//   getScholarship() {
+//   if (this.getAverageMark(this.marks) >= 4) {
+//       console.log("Ви отримали 1400 грн. стипендії");
+//       return this.scholarship += 1400;
+//     } else
+//     if ((this.getAverageMark(this.marks) < 4) || (this.dismiss(this.excluded))) {
+//       console.log("студента відчислено");
+//       return this.scholarship;
+//     }
       
-  }
-  stopInterval() {
-    setTimeout(() => clearInterval(this.scholarshipInterval), 30000);
-  }
+//   }
+//   stopInterval() {
+//     setTimeout(() => clearInterval(this.scholarshipInterval), 30000);
+//   }
 
-}
-const budgetStud1 = new BudgetStudent({
-  university: "Вища Школа Психотерапії м.Одеса",
-  course: 1,
-  fullName: "Остап Родоманський Бендер",
-  marks: [5, 4, 4, 5],
+// }
+// const budgetStud1 = new BudgetStudent({
+//   university: "Вища Школа Психотерапії м.Одеса",
+//   course: 1,
+//   fullName: "Остап Родоманський Бендер",
+//   marks: [5, 4, 4, 5],
   
-});
-console.log(budgetStud1);
-console.log(budgetStud1.getScholarship());
-budgetStud1.stopInterval();
-const student2 = new Student({
-  university: "Вищої Школи Психотерапії м.Одеса",
-  course: 1,
-  fullName: "Остап Родоманський Бендер",
-  marks: [5, 4, 4, 5],
+// });
+// console.log(budgetStud1);
+// console.log(budgetStud1.getScholarship());
+// budgetStud1.stopInterval();
+// const student2 = new Student({
+//   university: "Вищої Школи Психотерапії м.Одеса",
+//   course: 1,
+//   fullName: "Остап Родоманський Бендер",
+//   marks: [5, 4, 4, 5],
   
-});
+// });
 //console.log(student2);
 //console.log(student2.getInfo());
 //console.log(student2.marks);
@@ -925,7 +925,42 @@ const student2 = new Student({
 //console.log(student2.marks);
 
 
+////////////////////////////////task8//////////////////////////////////
 
+const getRandomHexColor = () => {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+};
+
+
+const generateBlocks = () => {
+  const blocksEl = document.querySelector('.blocks');
+  console.log(blocksEl);
+  const arrayOfBlocks = [];
+  for (let i = 0; i < 25; i += 1) {
+    const randomBlock = document.createElement('div');
+      randomBlock.style.width = 50 + 'px';
+      randomBlock.style.height = 50 + 'px';
+      randomBlock.style.backgroundColor = getRandomHexColor();
+      randomBlock.style.display = "inline-block";
+    randomBlock.classList.add("js-block");
+    arrayOfBlocks.push(randomBlock); 
+
+  }
+  blocksEl.append(... arrayOfBlocks);
+  
+};
+
+const generateBlocksInterval = () => {
+  generateBlocks();
+  setInterval(() => {
+    const blocks = document.querySelectorAll(".js-block");
+    blocks.forEach(block => block.style.backgroundColor = getRandomHexColor());
+  }, 1000);
+    
+  
+};
+
+generateBlocksInterval();
 
 
 
