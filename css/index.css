@@ -3,3 +3,17 @@
     height: 250px;
     border: 2px solid black;
 }
+
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+.button {
+    width: 50px;
+    padding: 10px;
+    outline: none;
+    background-color: tomato;
+    color: black;
+    border-radius: 3px;
+}

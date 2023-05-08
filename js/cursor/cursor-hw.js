@@ -965,32 +965,28 @@ const getRandomHexColor = () => {
 /////////////////////////// 2  /////////////////////////////////////////
 
 
-const generateBlocks = () => {
-  const blocksEl = document.querySelector('.blocks');
-  blocksEl.innerHTML = "";
-  for (let i = 0; i < 25; i += 1) {
-    const randomBlock = document.createElement('div');
-      randomBlock.style.width = 50 + 'px';
-      randomBlock.style.height = 50 + 'px';
-      randomBlock.style.backgroundColor = getRandomHexColor();
-      randomBlock.style.display = "inline-block";
-    randomBlock.classList.add("js-block");
-    blocksEl.append(randomBlock);
-  }
+// const generateBlocks = () => {
+//   const blocksEl = document.querySelector('.blocks');
+//   blocksEl.innerHTML = "";
+//   for (let i = 0; i < 25; i += 1) {
+//     const randomBlock = document.createElement('div');
+//       randomBlock.style.width = 50 + 'px';
+//       randomBlock.style.height = 50 + 'px';
+//       randomBlock.style.backgroundColor = getRandomHexColor();
+//       randomBlock.style.display = "inline-block";
+//     randomBlock.classList.add("js-block");
+//     blocksEl.append(randomBlock);
+//   }
   
   
-};
+// };
 
-const generateBlocksInterval = () => {
-  setInterval(() => generateBlocks(), 1000);
+// const generateBlocksInterval = () => {
+//   setInterval(() => generateBlocks(), 1000);
     
   
-};
+// };
 
-generateBlocksInterval();
+// generateBlocksInterval();
 
 
-// Необхідно написати програму, яка буде зчитувати з клавіатури
-// натискання клавіш та відтворювати унікальний звук для кожної
-// клавіши (клавіши можуть бути будь-які, звуки можуть бути будь-які,
-// тільки вкажіть у верстці – які кнопки натискати).
