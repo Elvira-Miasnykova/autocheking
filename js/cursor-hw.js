@@ -932,10 +932,42 @@ const getRandomHexColor = () => {
 };
 
 
+// const generateBlocks = () => {
+//   const blocksEl = document.querySelector('.blocks');
+//   console.log(blocksEl);
+//   const arrayOfBlocks = [];
+//   for (let i = 0; i < 25; i += 1) {
+//     const randomBlock = document.createElement('div');
+//       randomBlock.style.width = 50 + 'px';
+//       randomBlock.style.height = 50 + 'px';
+//       randomBlock.style.backgroundColor = getRandomHexColor();
+//       randomBlock.style.display = "inline-block";
+//     randomBlock.classList.add("js-block");
+//     arrayOfBlocks.push(randomBlock);
+
+//   }
+//   blocksEl.append(... arrayOfBlocks);
+  
+// };
+
+// const generateBlocksInterval = () => {
+//   generateBlocks();
+//   setInterval(() => {
+//     const blocks = document.querySelectorAll(".js-block");
+//     blocks.forEach(block => block.style.backgroundColor = getRandomHexColor());
+//   }, 1000);
+    
+  
+// };
+
+// generateBlocksInterval();
+
+/////////////////////////// 2  /////////////////////////////////////////
+
+
 const generateBlocks = () => {
   const blocksEl = document.querySelector('.blocks');
-  console.log(blocksEl);
-  const arrayOfBlocks = [];
+  blocksEl.innerHTML = "";
   for (let i = 0; i < 25; i += 1) {
     const randomBlock = document.createElement('div');
       randomBlock.style.width = 50 + 'px';
@@ -943,19 +975,14 @@ const generateBlocks = () => {
       randomBlock.style.backgroundColor = getRandomHexColor();
       randomBlock.style.display = "inline-block";
     randomBlock.classList.add("js-block");
-    arrayOfBlocks.push(randomBlock); 
-
+    blocksEl.append(randomBlock);
   }
-  blocksEl.append(... arrayOfBlocks);
+  
   
 };
 
 const generateBlocksInterval = () => {
-  generateBlocks();
-  setInterval(() => {
-    const blocks = document.querySelectorAll(".js-block");
-    blocks.forEach(block => block.style.backgroundColor = getRandomHexColor());
-  }, 1000);
+  setInterval(() => generateBlocks(), 1000);
     
   
 };
@@ -963,4 +990,7 @@ const generateBlocksInterval = () => {
 generateBlocksInterval();
 
 
-
+// Необхідно написати програму, яка буде зчитувати з клавіатури
+// натискання клавіш та відтворювати унікальний звук для кожної
+// клавіши (клавіши можуть бути будь-які, звуки можуть бути будь-які,
+// тільки вкажіть у верстці – які кнопки натискати).
