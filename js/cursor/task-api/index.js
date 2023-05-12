@@ -11,7 +11,7 @@ const refs = {
 };
 
 async function getFilms()  {
-    const getFilms = await fetch(`${BASE_URL}films/`)
+    const getFilms = await fetch('https://swapi.dev/api/films/')
         .then(response => {
             if (!response.ok) {
                 throw new Error(response.status);
@@ -75,7 +75,7 @@ function getCharactersByFilmId(id) {
                         throw new Error(response.statusText);
                     }
                     return response.json()
-                    .then(data => console.log(data))
+                   // .then(data => console.log(data))
             }
         )
     }))
@@ -103,8 +103,8 @@ const onInputHandle = (e) => {
 
 const onSearchFilm = (e) => {
     getCharactersByFilmId(refs.input.value)
-        // .then(id => (markupFilmRender(id.results.characters)))
-       // .catch(error => console.log(error.message));
+         .then(data => (markupFilmRender(data)))
+        .catch(error => console.log(error.message));
 };
 
 const markupFilmRender = (films) => {
@@ -119,7 +119,7 @@ const markupFilmRender = (films) => {
         `;
     }).join(" ");
 
-    gallery.insertAdjacentHTML('beforeend', markupFilm);
+    refs.gallery.insertAdjacentHTML('beforeend', markupFilm);
 };
 
 refs.input.addEventListener('input', onInputHandle);
