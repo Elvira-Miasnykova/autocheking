@@ -121,9 +121,12 @@ const onSearchFilm = (e) => {
 const onPlanetBtnClick = () => {
     console.log(getPlanets());
     refs.gallery.innerHTML = "";
+    page = 1;
     getPlanets().then(({ results }) => {
         console.log(results);
+        
         appendPlanetCard(results)
+        
     });
 };
 
