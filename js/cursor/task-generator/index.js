@@ -17,17 +17,9 @@ const idGenerator = createIdGenerator();
 // for (value of idGenerator) {
 //     console.log(value);
 // }
-console.log(idGenerator.next().value);
-console.log(idGenerator.next().value); 
-console.log(idGenerator.next().value);
-
-
-
-
-
-
-
-
+// console.log(idGenerator.next().value);
+// console.log(idGenerator.next().value); 
+// console.log(idGenerator.next().value);
 
 // Завдання 2 (advanced)
 // Створіть генератор, який буде регулювати розміри шрифту для
@@ -37,11 +29,30 @@ console.log(idGenerator.next().value);
 // Працювати генератор буде наступним чином:
 // const fontGenerator = newFontGenerator(14); // 14 –
 // стартове значення
-// fontGenerator.next("up").value -> 14
-// fontGenerator.next("up").value -> 16
-// fontGenerator.next("up").value -> 18
-// fontGenerator.next().value -> 18
-// fontGenerator.next("down").value -> 16
-// fontGenerator.next("down").value -> 14
-// fontGenerator.next("down").value -> 12
-// fontGenerator.next().value -> 12
+
+function* newFontGenerator(initialFontSize) {
+    let fzValue = initialFontSize;
+    for (let i = 0; i <= 100; i += 1) {
+        const toggledValue = yield;
+        console.log(toggledValue);
+    
+        if (toggledValue === "up") {
+            fzValue += 2;
+        }
+        else if (toggledValue === "down") {
+            fzValue -= 2;
+        } 
+        yield fzValue
+            ;
+    }
+}
+const fontGenerator = newFontGenerator(14);
+// console.log(fontGenerator.next().value);
+// console.log(fontGenerator.next("up").value);
+// console.log(fontGenerator.next("up").value);
+// console.log(fontGenerator.next("up").value);
+// console.log(fontGenerator.next().value);
+// console.log(fontGenerator.next("down").value);
+// console.log(fontGenerator.next("down").value);
+// console.log(fontGenerator.next("down").value);
+// console.log(fontGenerator.next().value);
