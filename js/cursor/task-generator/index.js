@@ -5,7 +5,30 @@
 // idGenerator.next().value -> 1
 // idGenerator.next().value -> 2
 // idGenerator.next().value -> 3
-// ...
+
+function* createIdGenerator() {
+    for (let i = 1; i < Infinity; i += 1) {
+        yield i;
+    }
+
+};
+
+const idGenerator = createIdGenerator();
+// for (value of idGenerator) {
+//     console.log(value);
+// }
+console.log(idGenerator.next().value);
+console.log(idGenerator.next().value); 
+console.log(idGenerator.next().value);
+
+
+
+
+
+
+
+
+
 // Завдання 2 (advanced)
 // Створіть генератор, який буде регулювати розміри шрифту для
 // вашого сайту.
