@@ -18,7 +18,7 @@ const idGenerator = createIdGenerator();
 //     console.log(value);
 // }
 // console.log(idGenerator.next().value);
-// console.log(idGenerator.next().value); 
+// console.log(idGenerator.next().value);
 // console.log(idGenerator.next().value);
 
 // Завдання 2 (advanced)
@@ -30,6 +30,10 @@ const idGenerator = createIdGenerator();
 // const fontGenerator = newFontGenerator(14); // 14 –
 // стартове значення
 
+const buttonIncRef = document.querySelector(".js-inc");
+const buttonDecRef = document.querySelector(".js-dec");
+const textRef = document.querySelector(".generator-text");
+
 function* newFontGenerator(initialFontSize) {
     let fzValue = initialFontSize;
     for (let i = 0; i <= 100; i += 1) {
@@ -38,19 +42,25 @@ function* newFontGenerator(initialFontSize) {
     
         if (toggledValue === "up") {
             fzValue += 2;
+            textRef.style.fontSize = fzValue + "px";
         }
         else if (toggledValue === "down") {
             fzValue -= 2;
+            textRef.style.fontSize = fzValue + "px";
         } 
-        yield fzValue
-            ;
-    }
-}
+        
+        
+    };
+};
+
 const fontGenerator = newFontGenerator(14);
-// console.log(fontGenerator.next().value);
-// console.log(fontGenerator.next("up").value);
-// console.log(fontGenerator.next("up").value);
-// console.log(fontGenerator.next("up").value);
+fontGenerator.next();
+
+buttonIncRef.addEventListener('click', () => fontGenerator.next("up"));
+buttonDecRef.addEventListener('click', () => fontGenerator.next("down"));
+// console.log(fontGenerator.next("up"));
+// console.log(fontGenerator.next("up"));
+// console.log(fontGenerator.next("up"));
 // console.log(fontGenerator.next().value);
 // console.log(fontGenerator.next("down").value);
 // console.log(fontGenerator.next("down").value);

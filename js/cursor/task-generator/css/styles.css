@@ -1,0 +1,39 @@
+body {
+    margin: auto;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: center;
+    
+};
+div {
+    display: flex;
+}
+.generator-text {
+    text-align: center;
+    margin-bottom: 25px;
+    color:navy;
+}; 
+
+
+.btn{
+    border: none;
+        border-radius: 5px;
+        padding: 10px 5px;
+        transition: all .09s ease;
+        width: 9rem;
+        font-size: 14px;
+        text-align: center;
+}
+
+
+.generator-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 5px;
+    width: 9rem;
+    font-size: 14px;
+    text-align: center;
+    color: #0f0e09;
+    background: rgba(45, 228, 75, 0.61);
+    cursor: pointer;
+};
